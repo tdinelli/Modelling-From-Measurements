@@ -131,4 +131,4 @@ dmypy.json
 # Ignoring Big Files
 
 
-Data/
+Data/reaction_diffusion_big.mat
