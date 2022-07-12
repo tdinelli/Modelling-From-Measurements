@@ -6,5 +6,5 @@ This repository contains the homework of the course "Modelling from measurements
 
 The repository is organized as follow:
 
-- [Data](Data/)
-    Contains all the useful data to run the Notebooks for the homework
+- [Data](Data/)\
+Contains all the useful data to run the Notebooks for the homework
