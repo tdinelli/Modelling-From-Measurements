@@ -20,12 +20,28 @@ def DMD(X, dX, r, time):
         Singular Value Decomposition (SVD) of X.
     x_dmd : array
         DMD reconstruction.
-    
+    TITO
+
+    (U)(Sigma)(Vconjtransp also referred as V*) = SVD
+
+    A_tilde = S signed 
+    S = Sigma matrix 
+    dX = X_{2}^{M}
+    np.diag(S) = sigma
+
+    Lambda sono gli autovalori mu_{k}
+    W è la matrice degli autovettori
+
+    U = dX V sigma^{-1} * W
+
+    X0 primo valore
+
+    b sarebbe b0
     """
     dt = time[1] - time[0]
     
     # SVD on the state matrix
-    U, S, Vh = np.linalg.svd(X, full_matrices=False)
+    U, S, Vh = np.linalg.svd(X, full_matrices=False) 
     V = Vh.conj().T
     U = U[:, :r]
     V = V[:, :r]
@@ -46,7 +62,6 @@ def DMD(X, dX, r, time):
     omega = np.log(Lambda) / dt
 
     b = np.linalg.pinv(Phi) @ X0
-
 
     # Reconstruction
     x_dmd = np.zeros((r, len(time)), dtype=omega.dtype)
