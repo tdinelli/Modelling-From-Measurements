@@ -134,3 +134,5 @@ dmypy.json
 Data/reaction_diffusion_big.mat
 Materials/KuraSiva.ipynb
 Notebooks/Figures/
+Tests/
+Utility/BOPDMD/
