@@ -1,76 +1,25 @@
 import numpy as np
 
-def DMD(X, dX, r, time):
-    """Apply Dynamic Mode Decomposition (DMD)
-    
-        Parameters
-    ----------
-    X : array
-        State matrix size: features x time.
-    dX : array
-        Time shifted state matrix.
-    time : array
-        Time steps.
-    r : int
-        Rank truncation.
+def DMD(X,Xprime,r):
 
-    Returns
-    -------
-    U, V, S : array
-        Singular Value Decomposition (SVD) of X.
-    x_dmd : array
-        DMD reconstruction.
-    TITO
-
-    (U)(Sigma)(Vconjtransp also referred as V*) = SVD
-
-    A_tilde = S signed 
-    S = Sigma matrix 
-    dX = X_{2}^{M}
-    np.diag(S) = sigma
-
-    Lambda sono gli autovalori mu_{k}
-    W è la matrice degli autovettori
-
-    U = dX V sigma^{-1} * W
-
-    X0 primo valore
-
-    b sarebbe b0
     """
-    dt = time[1] - time[0]
-    
-    # SVD on the state matrix
-    U, S, Vh = np.linalg.svd(X, full_matrices=False) 
-    V = Vh.conj().T
-    U = U[:, :r]
-    V = V[:, :r]
-    S = S[:r]
-    
-    # Projection of state matrix onto U
-    A_tilde = U.conj().T @ dX @ V @ np.linalg.inv(np.diag(S))
-    
-    # Eigenvalues
-    Lambda, W = np.linalg.eig(A_tilde)
-    
-    # Eigenvectors
-    Phi = dX @ V @ np.linalg.inv(np.diag(S)) @ W
-    
-    
-    X0 = X[:, 0] # initial conditions
+    Taken from:
+        https://github.com/dynamicslab/databook_python/blob/master/CH07/CH07_SEC02_DMD_Cylinder.ipynb
 
-    omega = np.log(Lambda) / dt
-
-    b = np.linalg.pinv(Phi) @ X0
-
-    # Reconstruction
-    x_dmd = np.zeros((r, len(time)), dtype=omega.dtype)
-    for k in range(len(time)):
-        x_dmd[:, k] = b * np.exp(omega * time[k])
-    x_dmd = np.dot(Phi, x_dmd)
+    """
     
-    #x_k = np.zeros((r, len(t_new)), dtype=omega.dtype)
-    #for k in range(len(t_new)):
-    #    x_k[:, k] = Phi @ (np.diag(Lambda) ** (k)) @ b
+    U,Sigma,VT = np.linalg.svd(X,full_matrices=False) # Step 1
+    Ur = U[:,:r]
+    Sigmar = np.diag(Sigma[:r])
+    VTr = VT[:r,:]
     
-    return U, S, V, x_dmd   
+    Atilde = np.linalg.solve(Sigmar.T,(Ur.T @ Xprime @ VTr.T).T).T # Step 2
+    
+    Lambda, W = np.linalg.eig(Atilde) # Step 3
+    Lambda = np.diag(Lambda)
+    
+    Phi = Xprime @ np.linalg.solve(Sigmar.T,VTr).T @ W # Step 4
+    alpha1 = Sigmar @ VTr[:,0]
+    b = np.linalg.solve(W @ Lambda,alpha1)
+    
+    return Phi, Lambda, b
