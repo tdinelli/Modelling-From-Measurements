@@ -7,13 +7,21 @@ This repository contains the homework of the course "Modelling from measurements
 The repository is organized as follow:
 
 - [Data](Data/)\
-Contains all the useful data to run the Notebooks for the assignement
+Contains all the useful data to run the Notebooks for the assignement.
 
 - [Homework](Homework/)\
-Contains the text of the homework and the final report produced
+Contains the text of the homework and the final report produced.
 
 - [Materials](Materials/)\
-Some useful scripts in python and MATLAB to produce data and explore different things for the homework
+Some useful scripts in python and MATLAB to produce data and explore different things for the homework.
 
 - [Notebook](Notebooks/)\
-Jupyter Notebooks of the homework
+Jupyter Notebooks of the homework. 
+    - [Utility](Notebooks/Utility/):\
+        [Lotka Volterra](Notebooks/Utility/lotkavolterra.py) Python function to compute the Lotka Volterra equation.
+        [DMD Functions](Notebooks/Utility/FunctionsDMD.py) Python implementation of some useful functions for computing DMD and reconstruction. 
+        [BOP-DMD](Notebooks/Utility/PythonBOPDMD/) Python implementation of Bagging optimized DMD taken from https://github.com/kunert/py-optDMD and slightly modified to match python3 requirements.
+
+## External libraries and dependencies
+
+## Some remarkable results
