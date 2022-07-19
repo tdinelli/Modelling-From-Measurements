@@ -7,4 +7,13 @@ This repository contains the homework of the course "Modelling from measurements
 The repository is organized as follow:
 
 - [Data](Data/)\
-Contains all the useful data to run the Notebooks for the homework
+Contains all the useful data to run the Notebooks for the assignement
+
+- [Homework](Homework/)\
+Contains the text of the homework and the final report produced
+
+- [Materials](Materials/)\
+Some useful scripts in python and MATLAB to produce data and explore different things for the homework
+
+- [Notebook](Notebooks/)\
+Jupyter Notebooks of the homework
