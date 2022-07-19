@@ -16,11 +16,11 @@ Contains the text of the homework and the final report produced.
 Some useful scripts in python and MATLAB to produce data and explore different things for the homework.
 
 - [Notebook](Notebooks/)\
-Jupyter Notebooks of the homework. This folder contains also:\ 
-[Utility](Notebooks/Utility/):\
-    [Lotka Volterra](Notebooks/Utility/lotkavolterra.py) Python function to compute the Lotka Volterra equation.\
-    [DMD Functions](Notebooks/Utility/FunctionsDMD.py) Python implementation of some useful functions for computing DMD and reconstruction. \
-    [BOP-DMD](Notebooks/Utility/PythonBOPDMD/) Python implementation of Bagging optimized DMD taken from https://github.com/kunert/py-optDMD and slightly modified to match python3 requirements.
+Jupyter Notebooks of the homework. This folder contains also:
+    - [Utility](Notebooks/Utility/):\
+        [Lotka Volterra](Notebooks/Utility/lotkavolterra.py) Python function to compute the Lotka Volterra equation.\
+        [DMD Functions](Notebooks/Utility/FunctionsDMD.py) Python implementation of some useful functions for computing DMD and reconstruction. \
+        [BOP-DMD](Notebooks/Utility/PythonBOPDMD/) Python implementation of Bagging optimized DMD taken from https://github.com/kunert/py-optDMD and slightly modified to match python3 requirements.
 
 ## External libraries and dependencies
 
