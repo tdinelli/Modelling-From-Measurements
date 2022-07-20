@@ -15,11 +15,12 @@ Contains the text of the homework and the final report produced.
 - [Materials](Materials/)\
 Some useful scripts in python and MATLAB to produce data and explore different things for the homework.
 
-- [Notebook](Notebooks/)\
+- [Notebooks](Notebooks/)\
 Jupyter Notebooks of the homework. This folder contains also:
     - [Lotka Volterra](Notebooks/Utility/lotkavolterra.py) Python function to compute the Lotka Volterra sytem of equations.
     - [DMD Functions](Notebooks/Utility/FunctionsDMD.py) Python implementation of some useful functions for computing DMD and reconstruction. 
     - [BOP-DMD](Notebooks/Utility/PythonBOPDMD/) Python implementation of Bagging Optimized DMD taken from https://github.com/kunert/py-optDMD and slightly modified to match Python3 requirements.
+    - [Lorenz](Notebooks/Utility/Lorenz.py) Python function describing Lorenz system of equations.
 
 ## External libraries and dependencies
 
