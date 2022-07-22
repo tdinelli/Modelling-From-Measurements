@@ -135,3 +135,5 @@ Data/reaction_diffusion_big.mat
 Materials/KuraSiva.ipynb
 # Notebooks/Figures/
 Tests/
+.DS_store
+Notebooks/.DS_store
