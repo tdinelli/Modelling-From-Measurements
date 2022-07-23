@@ -22,6 +22,4 @@ Jupyter Notebooks of the homework. This folder contains also:
     - [BOP-DMD](Notebooks/Utility/PythonBOPDMD/) Python implementation of Bagging Optimized DMD taken from https://github.com/kunert/py-optDMD and slightly modified to match Python3 requirements.
     - [Lorenz](Notebooks/Utility/Lorenz.py) Python function describing Lorenz system of equations.
 
-## External libraries and dependencies
 
-## Some remarkable results
