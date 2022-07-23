@@ -24,7 +24,7 @@ Jupyter Notebooks of the homework. This folder contains also:
     - [Kuramoto-Sivashinsky](Notebooks/Utility/KuraSiva.py) Python function for computing Kuramoto-Sivashinsky equation.
     - [Reaction Diffusion](Notebooks/Utility/Reaction_Diffusion.py) Python Function for the computation of Lambda-Omega reaction diffusion system.
 
-## External libraries
+## External packages
 
 - [Numpy](https://numpy.org)
 - [Pandas](https://pandas.pydata.org)
