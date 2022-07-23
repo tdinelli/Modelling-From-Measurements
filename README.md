@@ -21,5 +21,19 @@ Jupyter Notebooks of the homework. This folder contains also:
     - [DMD Functions](Notebooks/Utility/FunctionsDMD.py) Python implementation of some useful functions for computing DMD and reconstruction. 
     - [BOP-DMD](Notebooks/Utility/PythonBOPDMD/) Python implementation of Bagging Optimized DMD taken from https://github.com/kunert/py-optDMD and slightly modified to match Python3 requirements.
     - [Lorenz](Notebooks/Utility/Lorenz.py) Python function describing Lorenz system of equations.
+    - [Kuramoto-Sivashinsky](Notebooks/Utility/KuraSiva.py) Python function for computing Kuramoto-Sivashinsky equation.
+    - [Reaction Diffusion](Notebooks/Utility/Reaction_Diffusion.py) Python Function for the computation of Lambda-Omega reaction diffusion system.
 
+## External libraries
 
+- [Numpy](https://numpy.org)
+- [Pandas](https://pandas.pydata.org)
+- [Matplotlib](https://matplotlib.org)
+- [Scipy](https://scipy.org)
+- [Scikit-learn](https://scikit-learn.org/stable/)
+- [Keras](https://keras.io)
+- [PySINDY](https://pysindy.readthedocs.io/en/latest/)
+- [Tabulate](https://pypi.org/project/tabulate/)
+- [Science Plots](https://github.com/garrettj403/SciencePlots)
+
+If you would like to reproduce the results keep in mind that in order to use pySINDY package you should use python3.7.
