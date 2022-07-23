@@ -43,3 +43,31 @@ def DMDprediction(Phi, Lambda, b, time, r):
         X_pred[:, i] = s4
 
     return X_pred
+
+def recondmd(X, Xshift, r, time):
+    dt = time[1] - time[0]
+    
+    U, S, Vh = np.linalg.svd(X, full_matrices=False)
+    V = Vh.conj().T
+    U = U[:, :r]
+    V = V[:, :r]
+    S = S[:r]
+    
+    A_tilde = U.conj().T @ Xshift @ V @ np.linalg.inv(np.diag(S))
+    
+    Lambda, W = np.linalg.eig(A_tilde)
+    
+    Phi = Xshift @ V @ np.linalg.inv(np.diag(S)) @ W
+    
+    X0 = X[:, 0]
+
+    omega = np.log(Lambda) / dt
+
+    b = np.linalg.pinv(Phi) @ X0
+
+    x_dmd = np.zeros((r, len(time)), dtype=omega.dtype)
+    for k in range(len(time)):
+        x_dmd[:, k] = b * np.exp(omega * time[k])
+    x_dmd = np.dot(Phi, x_dmd)
+
+    return U, S, V, x_dmd   
